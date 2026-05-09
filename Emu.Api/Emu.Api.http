@@ -1,0 +1,6 @@
+@Emu.Api_HostAddress = http://localhost:5124
+
+GET {{Emu.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

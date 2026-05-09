@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "eTQ719TL8zs=",
+  "success": true,
+  "projectFilePath": "/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Cli/Emu.Cli.csproj",
+  "expectedPackageFiles": [
+    "/home/maurice/.nuget/packages/spectre.console/0.55.2/spectre.console.0.55.2.nupkg.sha512",
+    "/home/maurice/.nuget/packages/spectre.console.ansi/0.55.2/spectre.console.ansi.0.55.2.nupkg.sha512",
+    "/home/maurice/.nuget/packages/spectre.console.cli/0.55.0/spectre.console.cli.0.55.0.nupkg.sha512"
+  ],
+  "logs": []
+}
