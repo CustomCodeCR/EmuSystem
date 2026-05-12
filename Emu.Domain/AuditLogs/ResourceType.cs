@@ -1,6 +1,6 @@
 namespace Domain.AuditLogs;
 
-public enum ResourseType : short
+public enum ResourceType : short
 {
     Tenant = 1,
     Project = 2,

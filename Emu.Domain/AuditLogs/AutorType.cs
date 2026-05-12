@@ -1,6 +1,6 @@
 namespace Domain.AuditLogs;
 
-public enum ActorType : short
+public enum AutorType : short
 {
     User = 1,
     ApiKey = 2,
