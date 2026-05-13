@@ -16,6 +16,8 @@ internal sealed class ApiKeyConfiguration : IEntityTypeConfiguration<ApiKey>
 
         builder.Property(x => x.Name).HasMaxLength(200).IsRequired();
 
+        builder.Property(x => x.Description).HasMaxLength(500);
+
         builder.Property(x => x.KeyHash).HasMaxLength(500).IsRequired();
 
         builder.Property(x => x.KeyPrefix).HasMaxLength(50).IsRequired();

@@ -4,7 +4,7 @@ public sealed class AuditLog
 {
     public Guid AuditLogId { get; set; }
     public Guid TenantId { get; set; }
-    public AutorType AutorType { get; set; }
+    public ActorType ActorType { get; set; }
     public Guid? ActorId { get; set; }
     public string Action { get; set; } = string.Empty;
     public ResourceType ResourceType { get; set; }

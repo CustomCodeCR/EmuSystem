@@ -1,6 +1,14 @@
+using Application.Abstractions.Auth;
+using Application.Abstractions.Crypto;
 using Application.Abstractions.Persistence;
+using Infrastructure.Audit;
+using Infrastructure.Auth;
+using Infrastructure.Crypto;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Interceptors;
+using Infrastructure.Repositories.ApiKeys;
+using Infrastructure.Repositories.Secrets;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,7 +22,11 @@ public static class DependencyInjection
         IConfiguration configuration
     )
     {
-        var connectionString = configuration.GetConnectionString("postgres");
+        services.Configure<EncryptionOptions>(configuration.GetSection("Encryption"));
+
+        services.Configure<ApiKeyOptions>(configuration.GetSection("ApiKeys"));
+
+        services.Configure<JwtOptions>(configuration.GetSection("Jwt"));
 
         services.AddHttpContextAccessor();
 
@@ -23,6 +35,17 @@ public static class DependencyInjection
             Infrastructure.Time.SystemClock
         >();
 
+        services.AddSingleton<IMasterKeyProvider, MasterKeyProvider>();
+        services.AddScoped<ISecretEncryptionService, SecretEncryptionService>();
+
+        services.AddScoped<ICurrentActorService, CurrentActorService>();
+        services.AddScoped<IApiKeyHasher, ApiKeyHasher>();
+        services.AddScoped<IJwtTokenService, JwtTokenService>();
+
+        services.AddScoped<IAuditWriter, AuditWriter>();
+
+        services.AddScoped<ISecretRepository, SecretRepository>();
+        services.AddScoped<IApiKeyRepository, ApiKeyRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         services.AddSingleton<AuditableEntityInterceptor>();
@@ -30,13 +53,26 @@ public static class DependencyInjection
         services.AddDbContext<ApplicationDbContext>(
             (serviceProvider, options) =>
             {
+                var connectionString = configuration.GetConnectionString("Postgres");
+
                 options.UseNpgsql(connectionString);
-                options.UseUpperCaseNamingConvention();
+                options.UseSnakeCaseNamingConvention();
                 options.AddInterceptors(
                     serviceProvider.GetRequiredService<AuditableEntityInterceptor>()
                 );
             }
         );
+
+        services
+            .AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = ApiKeyAuthenticationHandler.SchemeName;
+                options.DefaultChallengeScheme = ApiKeyAuthenticationHandler.SchemeName;
+            })
+            .AddScheme<AuthenticationSchemeOptions, ApiKeyAuthenticationHandler>(
+                ApiKeyAuthenticationHandler.SchemeName,
+                _ => { }
+            );
 
         return services;
     }

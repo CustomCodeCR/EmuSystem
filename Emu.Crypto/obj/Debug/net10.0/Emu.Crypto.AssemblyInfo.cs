@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Emu.Crypto")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a9139e43a602c1430a1e9b09482334fa2b62bf4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1069e8ababeaebdfcb1ac32fabafa99fb30ca6e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Emu.Crypto")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Emu.Crypto")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,7 +3,7 @@ using Domain.Secrets;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repositories;
+namespace Infrastructure.Repositories.Secrets;
 
 public sealed class SecretRepository : ISecretRepository
 {

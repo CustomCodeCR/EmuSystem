@@ -14,7 +14,7 @@ internal sealed class AuditLogConfiguration : IEntityTypeConfiguration<AuditLog>
 
         builder.Property(x => x.AuditLogId).ValueGeneratedNever();
 
-        builder.Property(x => x.AutorType).HasConversion<short>().HasMaxLength(50).IsRequired();
+        builder.Property(x => x.ActorType).HasConversion<short>().HasMaxLength(50).IsRequired();
 
         builder.Property(x => x.Action).HasMaxLength(200).IsRequired();
 
