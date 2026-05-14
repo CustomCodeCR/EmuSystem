@@ -5,6 +5,7 @@ using Domain.Environments;
 using Domain.Projects;
 using Domain.Secrets;
 using Domain.Tenants;
+using Domain.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence;
@@ -28,4 +29,5 @@ public sealed class ApplicationDbContext : DbContext
     public DbSet<ApiKey> ApiKeys => Set<ApiKey>();
     public DbSet<AccessPolicy> AccessPolicies => Set<AccessPolicy>();
     public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
+    public DbSet<User> Users => Set<User>();
 }

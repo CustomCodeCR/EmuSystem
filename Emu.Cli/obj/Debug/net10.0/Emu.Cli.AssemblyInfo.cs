@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Emu.Cli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1069e8ababeaebdfcb1ac32fabafa99fb30ca6e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+acbcaff82f4e12023428d355ce155e921dcf7fd3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Emu.Cli")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Emu.Cli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

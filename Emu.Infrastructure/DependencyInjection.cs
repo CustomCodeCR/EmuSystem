@@ -6,8 +6,14 @@ using Infrastructure.Auth;
 using Infrastructure.Crypto;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Interceptors;
+using Infrastructure.Repositories.AccessPolicies;
 using Infrastructure.Repositories.ApiKeys;
+using Infrastructure.Repositories.AuditLogs;
+using Infrastructure.Repositories.Environments;
+using Infrastructure.Repositories.Projects;
 using Infrastructure.Repositories.Secrets;
+using Infrastructure.Repositories.Tenants;
+using Infrastructure.Repositories.Users;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -41,11 +47,19 @@ public static class DependencyInjection
         services.AddScoped<ICurrentActorService, CurrentActorService>();
         services.AddScoped<IApiKeyHasher, ApiKeyHasher>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
+        services.AddScoped<IApiKeyGenerator, ApiKeyGenerator>();
 
         services.AddScoped<IAuditWriter, AuditWriter>();
 
         services.AddScoped<ISecretRepository, SecretRepository>();
         services.AddScoped<IApiKeyRepository, ApiKeyRepository>();
+        services.AddScoped<IAccessPolicyRepository, AccessPolicyRepository>();
+        services.AddScoped<IAuditLogRepository, AuditLogRepository>();
+        services.AddScoped<IProjectEnvironmentRepository, ProjectEnvironmentRepository>();
+        services.AddScoped<IProjectRepository, ProjectRepository>();
+        services.AddScoped<ITenantRepository, TenantRepository>();
+        services.AddScoped<ISecretVersionRepository, SecretVersionRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         services.AddSingleton<AuditableEntityInterceptor>();
