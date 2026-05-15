@@ -1,7 +1,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace VaultSecret.Application.Common;
+namespace Application.Common;
 
 public static partial class SlugHelper
 {

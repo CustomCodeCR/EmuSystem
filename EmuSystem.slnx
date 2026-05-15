@@ -2,7 +2,6 @@
   <Project Path="Emu.Api/Emu.Api.csproj" />
   <Project Path="Emu.Application/Emu.Application.csproj" />
   <Project Path="Emu.Cli/Emu.Cli.csproj" />
-  <Project Path="Emu.Crypto/Emu.Crypto.csproj" />
   <Project Path="Emu.Domain/Emu.Domain.csproj" />
   <Project Path="Emu.Infrastructure/Emu.Infrastructure.csproj" />
   <Project Path="Emu.Sdk/Emu.Sdk.csproj" />

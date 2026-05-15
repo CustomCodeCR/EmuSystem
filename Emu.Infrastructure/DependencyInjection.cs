@@ -43,6 +43,7 @@ public static class DependencyInjection
 
         services.AddSingleton<IMasterKeyProvider, MasterKeyProvider>();
         services.AddScoped<ISecretEncryptionService, SecretEncryptionService>();
+        services.AddScoped<IPasswordHasher, PasswordHasher>();
 
         services.AddScoped<ICurrentActorService, CurrentActorService>();
         services.AddScoped<IApiKeyHasher, ApiKeyHasher>();
