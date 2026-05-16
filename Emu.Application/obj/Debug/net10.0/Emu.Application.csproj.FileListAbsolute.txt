@@ -1,0 +1,16 @@
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/bin/Debug/net10.0/Emu.Application.deps.json
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/bin/Debug/net10.0/Emu.Application.dll
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/bin/Debug/net10.0/Emu.Application.pdb
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/bin/Debug/net10.0/Emu.Domain.dll
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/bin/Debug/net10.0/Emu.Domain.pdb
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/obj/Debug/net10.0/Emu.Application.csproj.AssemblyReference.cache
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/obj/Debug/net10.0/Emu.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/obj/Debug/net10.0/Emu.Application.AssemblyInfoInputs.cache
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/obj/Debug/net10.0/Emu.Application.AssemblyInfo.cs
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/obj/Debug/net10.0/Emu.Application.csproj.CoreCompileInputs.cache
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/obj/Debug/net10.0/Emu.Application.sourcelink.json
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/obj/Debug/net10.0/Emu.Appl.E112CEDD.Up2Date
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/obj/Debug/net10.0/Emu.Application.dll
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/obj/Debug/net10.0/refint/Emu.Application.dll
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/obj/Debug/net10.0/Emu.Application.pdb
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Application/obj/Debug/net10.0/ref/Emu.Application.dll
