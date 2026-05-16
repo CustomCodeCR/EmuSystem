@@ -15,7 +15,6 @@ using Infrastructure.Repositories.Projects;
 using Infrastructure.Repositories.Secrets;
 using Infrastructure.Repositories.Tenants;
 using Infrastructure.Repositories.Users;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -80,17 +79,6 @@ public static class DependencyInjection
                 );
             }
         );
-
-        services
-            .AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = ApiKeyAuthenticationHandler.SchemeName;
-                options.DefaultChallengeScheme = ApiKeyAuthenticationHandler.SchemeName;
-            })
-            .AddScheme<AuthenticationSchemeOptions, ApiKeyAuthenticationHandler>(
-                ApiKeyAuthenticationHandler.SchemeName,
-                _ => { }
-            );
 
         return services;
     }

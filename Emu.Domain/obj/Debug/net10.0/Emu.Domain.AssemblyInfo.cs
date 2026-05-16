@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Emu.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e588703402b6255faf5daa9db16bbd913edebe7a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc23b5f9a78b8f7efd3e05fdf081021634c8d8bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Emu.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Emu.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,4 +1,6 @@
 using System.Text;
+using Infrastructure.Auth;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -7,6 +9,10 @@ namespace Api.Extensions;
 
 public static class AuthExtensions
 {
+    public const string JwtScheme = JwtBearerDefaults.AuthenticationScheme;
+    public const string ApiKeyScheme = ApiKeyAuthenticationHandler.SchemeName;
+    public const string SmartScheme = "Smart";
+
     public static IServiceCollection AddVaultSecretAuth(
         this IServiceCollection services,
         IConfiguration configuration
@@ -19,22 +25,51 @@ public static class AuthExtensions
             ?? throw new InvalidOperationException("JWT SigningKey is missing.");
 
         services
-            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
+            .AddAuthentication(options =>
             {
-                options.TokenValidationParameters = new TokenValidationParameters
+                options.DefaultAuthenticateScheme = SmartScheme;
+                options.DefaultChallengeScheme = SmartScheme;
+            })
+            .AddPolicyScheme(
+                SmartScheme,
+                SmartScheme,
+                options =>
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
+                    options.ForwardDefaultSelector = context =>
+                    {
+                        if (context.Request.Headers.ContainsKey("X-Api-Key"))
+                        {
+                            return ApiKeyScheme;
+                        }
 
-                    ValidIssuer = jwtSection["Issuer"],
-                    ValidAudience = jwtSection["Audience"],
+                        return JwtScheme;
+                    };
+                }
+            )
+            .AddJwtBearer(
+                JwtScheme,
+                options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
 
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signingKey)),
-                };
-            });
+                        ValidIssuer = jwtSection["Issuer"],
+                        ValidAudience = jwtSection["Audience"],
+
+                        IssuerSigningKey = new SymmetricSecurityKey(
+                            Encoding.UTF8.GetBytes(signingKey)
+                        ),
+                    };
+                }
+            )
+            .AddScheme<AuthenticationSchemeOptions, ApiKeyAuthenticationHandler>(
+                ApiKeyScheme,
+                _ => { }
+            );
 
         services.AddAuthorization();
 
@@ -65,6 +100,17 @@ public static class AuthExtensions
                 }
             );
 
+            options.AddSecurityDefinition(
+                "ApiKey",
+                new OpenApiSecurityScheme
+                {
+                    Name = "X-Api-Key",
+                    Type = SecuritySchemeType.ApiKey,
+                    In = ParameterLocation.Header,
+                    Description = "Use your VaultSecret API key",
+                }
+            );
+
             options.AddSecurityRequirement(
                 new OpenApiSecurityRequirement
                 {
@@ -75,6 +121,17 @@ public static class AuthExtensions
                             {
                                 Type = ReferenceType.SecurityScheme,
                                 Id = "Bearer",
+                            },
+                        },
+                        Array.Empty<string>()
+                    },
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "ApiKey",
                             },
                         },
                         Array.Empty<string>()
