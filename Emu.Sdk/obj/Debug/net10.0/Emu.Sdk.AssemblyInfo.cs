@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Emu.Sdk")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+243e7ebcb549ff445cc3105ccf3a113cc81cdae0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e588703402b6255faf5daa9db16bbd913edebe7a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Emu.Sdk")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Emu.Sdk")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

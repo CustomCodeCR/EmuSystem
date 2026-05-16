@@ -8,11 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
-builder.Services.AddAuthorization();
+builder.Services.AddVaultSecretAuth(builder.Configuration);
 builder.Services.AddVaultSecretRateLimiting();
-
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddVaultSecretSwagger();
 
 var app = builder.Build();
 

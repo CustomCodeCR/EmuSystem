@@ -1,0 +1,13 @@
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/bin/Debug/net10.0/Emu.Sdk.deps.json
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/bin/Debug/net10.0/Emu.Sdk.dll
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/bin/Debug/net10.0/Emu.Sdk.pdb
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/obj/Debug/net10.0/Emu.Sdk.csproj.AssemblyReference.cache
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/obj/Debug/net10.0/Emu.Sdk.GeneratedMSBuildEditorConfig.editorconfig
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/obj/Debug/net10.0/Emu.Sdk.AssemblyInfoInputs.cache
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/obj/Debug/net10.0/Emu.Sdk.AssemblyInfo.cs
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/obj/Debug/net10.0/Emu.Sdk.csproj.CoreCompileInputs.cache
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/obj/Debug/net10.0/Emu.Sdk.sourcelink.json
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/obj/Debug/net10.0/Emu.Sdk.dll
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/obj/Debug/net10.0/refint/Emu.Sdk.dll
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/obj/Debug/net10.0/Emu.Sdk.pdb
+/home/maurice/Trabajo/customer/CustomCodeCR/EmuSystem/Emu.Sdk/obj/Debug/net10.0/ref/Emu.Sdk.dll
