@@ -1,4 +1,5 @@
 using Infrastructure.Persistence;
+using Infrastructure.Persistence.Seed;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Extensions;
