@@ -26,6 +26,11 @@ app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.MapEndpoints();
+
+app.MapFallbackToFile("index.html");
 
 app.Run();
