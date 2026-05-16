@@ -6,6 +6,7 @@ using Infrastructure.Auth;
 using Infrastructure.Crypto;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Interceptors;
+using Infrastructure.Persistence.Seed;
 using Infrastructure.Repositories.AccessPolicies;
 using Infrastructure.Repositories.ApiKeys;
 using Infrastructure.Repositories.AuditLogs;
@@ -49,6 +50,8 @@ public static class DependencyInjection
         services.AddScoped<IApiKeyHasher, ApiKeyHasher>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
         services.AddScoped<IApiKeyGenerator, ApiKeyGenerator>();
+
+        services.AddScoped<IDatabaseSeeder, DatabaseSeeder>();
 
         services.AddScoped<IAuditWriter, AuditWriter>();
 

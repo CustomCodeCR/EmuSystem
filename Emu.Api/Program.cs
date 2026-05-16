@@ -16,6 +16,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+await app.InitializeDatabaseAsync();
+
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseSwagger();
