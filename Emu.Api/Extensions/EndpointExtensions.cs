@@ -1,5 +1,6 @@
 using Api.Features.ApiKeys;
 using Api.Features.AuditLogs;
+using Api.Features.Auth;
 using Api.Features.Environments;
 using Api.Features.Policies;
 using Api.Features.Projects;
@@ -21,6 +22,7 @@ public static class EndpointExtensions
         app.MapSecretEndpoints();
         app.MapAuditLogEndpoints();
         app.MapUserEndpoints();
+        app.MapAuthEndpoints();
 
         return app;
     }

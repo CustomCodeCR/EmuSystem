@@ -29,12 +29,17 @@ EOF
 
   chmod 600 "$SECRETS_FILE"
   echo "VaultSecret runtime secrets generated."
+else
+  echo "Using existing VaultSecret runtime secrets."
 fi
 
 set -a
 . "$SECRETS_FILE"
 set +a
 
+export Encryption__MasterKey
+export ApiKeys__Pepper
+export Jwt__SigningKey
 export PGPASSWORD="$DB_PASSWORD"
 
 echo "Waiting for PostgreSQL..."
@@ -56,9 +61,11 @@ else
   echo "Database '$DB_NAME' already exists."
 fi
 
-echo "Applying EF Core migrations..."
+echo "Applying EF Core migrations and seed..."
 
 dotnet Emu.Api.dll migrate
+
+echo "CLI available inside container at: /app/cli/Emu.Cli"
 
 echo "Starting Emu System API..."
 
